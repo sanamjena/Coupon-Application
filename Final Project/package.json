@@ -1,0 +1,16 @@
+{
+  "name": "final-project",
+  "version": "1.0.0",
+  "description": "CS 546 Final Project Coupon Application in collaboration with Shikha Soneji, Anirudh Das, Jonathon Ho, & Aniket Chavan",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanamsritam/Coupon-Application/tree/master/Final%20Project"
+  },
+  "author": "Sanam Jena, Shikha Soneji, Anirudh Das, Jonathon Ho & Aniket Chavan",
+  "license": "ISC"
+}
