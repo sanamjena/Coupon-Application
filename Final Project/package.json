@@ -12,5 +12,12 @@
     "url": "https://github.com/sanamsritam/Coupon-Application/tree/master/Final%20Project"
   },
   "author": "Sanam Jena, Shikha Soneji, Anirudh Das, Jonathon Ho & Aniket Chavan",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.0",
+    "handlebars": "^4.5.3"
+  }
 }
