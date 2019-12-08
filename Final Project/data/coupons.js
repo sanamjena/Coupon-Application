@@ -78,10 +78,26 @@ async function addDislike(coupon_id, user_id) {
   return await get(coupon_id);
 }
 
+async function addComment(coupon_id, user_id, comment) {
+  if (!coupon_id) throw "No coupon ID was given.";
+  if (!user_id) throw "No user ID was given.";
+  if (!comment) throw "No comment was given.";
+  const couponCollection = await coupons();
+  let commentObj = { userId: user_id, comment: comment };
+  const updatedInfo = await couponCollection.update(
+    { _id: coupon_id },
+    { $push: { commentObj } }
+  );
+  if (updatedInfo.modifiedCount === 0)
+    throw "The comment was unable to be updated.";
+  return await get(coupon_id);
+}
+
 module.exports = {
   get,
   create,
   rating,
   addLike,
-  addDislike
+  addDislike,
+  addComment
 };
