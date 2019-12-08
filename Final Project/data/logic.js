@@ -4,8 +4,6 @@ const users = mongoCollections.users;
 const likes = mongoCollections.likes;
 const { ObjectId } = require("mongodb");
 const bcryptjs = require("bcryptjs");
-var SALT_WORK_FACTOR = 10;
-mongoose.connect("mongodb://localhost/enctest");
 
 async function get(Id) {
   if (!Id) throw "You must provide an id to search for";
@@ -50,7 +48,7 @@ async function create(
   ) {
     throw "Please enter a valid Input. Either the firstname, lastname, gender, city or state is of type Object";
   }
-  if (!password) throw "No password was supplied";
+  if (!password) throw "No password was given.";
 
   if (!validateEmail(emailId)) throw "Please Enter a valid Email I";
   const userCollection = await users();
@@ -79,23 +77,28 @@ async function create(
   return newusr;
 }
 
-async function checkCorrect(email, password) {
-  var user = this;
-  if (!user.isModified("password")) return next();
-
-  bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
-    if (err) return next(err);
-
-    bcrypt.hash(user.password, salt, function(err, hash) {
-      if (err) return next(err);
-
-      user.password = hash;
-      next();
-    });
-  });
+async function authenticate(emailId, password) {
+  for (var res = 0; res < info.length; res++) {
+    if (get[Id].username == username) {
+      mongoCollections.findOne(emailId);
+      let response = await bcryptjs.compare(password, get[Id].hashedPassword);
+      // use a mongo DB generated hashed password
+      if (response) {
+        return res;
+      }
+    }
+  }
+  return -1;
 }
 
 async function validateEmail(email) {
   var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email);
 }
+
+module.exports = {
+  validateEmail,
+  get,
+  create,
+  authenticate
+};

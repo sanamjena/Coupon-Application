@@ -12,21 +12,76 @@ async function get(id) {
   return target_coupon;
 }
 
-async function create(likes ) {
-  if (!name) throw "No name was given.";
-  if (typeof name !== "string") throw `${name} is not a string.`;
-  if (!animalType) throw "No animal type was given.";
-  if (typeof animalType !== "string") throw `${animalType} is not a string.`;
-  const animalCollection = await animals();
-  let newAnimal = {
-    name: name,
-    animalType: animalType,
+async function create(product) {
+  if (!product) throw "No product was given.";
+  if (typeof product !== "string") throw `${product} is not a string.`;
+  const couponCollection = await coupons();
+  //likes: an array of user ID's that have liked the coupon
+  //dislikes: an array of user ID's that have disliked the coupon
+  //rating: # of likes / # of likes + # of dislikes **RATING WILL BE DISPLAYED ON A SCALE FROM 0 - 10**
+  //comments: an array of objects with fields of User ID and the comment itself
+  let newCoupon = {
+    product: product,
     likes: [],
-    posts: []
+    dislikes: [],
+    rating: 0,
+    comments: []
   };
-  const insertInfo = await animalCollection.insertOne(newAnimal);
+  const insertInfo = await couponCollection.insertOne(newCoupon);
   if (insertInfo.insertedCount === 0)
-    throw "The animal was unable to be added.";
+    throw "The coupon was unable to be added.";
   const newId = insertInfo.insertedId;
   return await get(newId);
 }
+
+async function rating(coupon_id) {
+  if (!coupon_id) throw "No coupon ID was given.";
+  const targetCoupon = await get(coupon_id);
+  let rating =
+    10 *
+    (
+      targetCoupon["likes"].length /
+      (targetCoupon["likes"].length + targetCoupon["dislikes"].length)
+    ).toFixed(1);
+  const updatedInfo = await couponCollection.updateOne(
+    { _id: coupon_id },
+    { $set: { rating: rating } }
+  );
+  if (updatedInfo.modifiedCount === 0)
+    throw "The coupon was unable to be updated.";
+  return targetCoupon;
+}
+
+async function addLike(coupon_id, user_id) {
+  if (!coupon_id) throw "No coupon ID was given.";
+  if (!user_id) throw "No user ID was given.";
+  const couponCollection = await coupons();
+  const updatedInfo = await couponCollection.insert(
+    { _id: coupon_id },
+    { $push: { likes: user_id } }
+  );
+  if (updatedInfo.modifiedCount === 0)
+    throw "The coupon was unable to be updated.";
+  return await get(coupon_id);
+}
+
+async function addDislike(coupon_id, user_id) {
+  if (!coupon_id) throw "No coupon ID was given.";
+  if (!user_id) throw "No user ID was given.";
+  const couponCollection = await coupons();
+  const updatedInfo = await couponCollection.insert(
+    { _id: coupon_id },
+    { $push: { dislikes: user_id } }
+  );
+  if (updatedInfo.modifiedCount === 0)
+    throw "The coupon was unable to be updated.";
+  return await get(coupon_id);
+}
+
+module.exports = {
+  get,
+  create,
+  rating,
+  addLike,
+  addDislike
+};
