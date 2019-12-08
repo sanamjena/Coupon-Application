@@ -19,7 +19,15 @@ async function get(Id) {
   return usr;
 }
 
-async function create(firstname, lastname, emailId, gender, city, state) {
+async function create(
+  firstname,
+  lastname,
+  emailId,
+  gender,
+  city,
+  state,
+  password
+) {
   if (!firstname) throw "You must provide a name for your animal";
   if (
     Number.isInteger(firstname) ||
@@ -57,4 +65,13 @@ async function create(firstname, lastname, emailId, gender, city, state) {
 
   const newusr = await get(newId);
   return newusr;
+}
+
+async function hashPass(username, password) {
+  if (!password) throw "No password was supplied";
+  if (typeof password !== "string") throw `${password} is not a string`;
+  const userCollection = await users();
+  bcrypt.genSalt(15, salt => {
+    bcrypt.hash(password, salt, hash => {});
+  });
 }
