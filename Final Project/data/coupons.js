@@ -13,23 +13,28 @@ async function get(id) {
   return target_coupon;
 }
 
-async function create(product, code) {
-  if (!product) throw "No product was given.";
-  if (typeof product !== "string") throw `${product} is not a string.`;
+async function create(description, expiration_date, code) {
+  //   if (!product) throw "No product was given.";
+  //   if (typeof product !== "string") throw `${product} is not a string.`;
   if (!code) throw "No code was given.";
   if (typeof code !== "string") throw `${code} is not a string.`;
+  if (!expiration_date) throw "No expiration date was given.";
+  if (typeof expiration_date !== "string")
+    throw `${expiration_date} is not a string.`;
   const couponCollection = await coupons();
   //likes: an array of user ID's that have liked the coupon
   //dislikes: an array of user ID's that have disliked the coupon
   //rating: # of likes / # of likes + # of dislikes **RATING WILL BE DISPLAYED ON A SCALE FROM 0 - 10**
   //comments: an array of objects with fields of User ID and the comment itself
   let newCoupon = {
-    product: product,
+    // product: product,
+    description: description,
+    expiration_date: expiration_date,
+    code: code,
     likes: [],
     dislikes: [],
     rating: 0,
-    comments: [],
-    code: code
+    comments: []
   };
   const insertInfo = await couponCollection.insertOne(newCoupon);
   if (insertInfo.insertedCount === 0)
@@ -106,41 +111,69 @@ module.exports = {
   addComment
 };
 
-// const main = async () => {
-//     coupons.
+const main = async () => {
+  await create("30% off Everything Photo", "12/28/2019", "THIRTYALL");
+  await create(
+    "25% off Contact Lenses + Free Shipping",
+    "12/31/2019",
+    "RAKUTEN25"
+  );
+  await create(
+    "60% off Wood Panels + Same Day Pickup",
+    "12/10/2019",
+    "WOODPL2"
+  );
+  await create("Extra 10% off Sleek Makeup", "12/31/2019", "SLEEK");
+  await create(
+    "60% off Wood Hanger Board Print and Wood Panel + Same Day Pickup",
+    "12/14/2019",
+    "SIXTYHBP"
+  );
+  await create("50% off Photo Orders $60+", "12/28/2019", "SIXTY5");
+  await create(
+    "15% off $30+ select Health Care items",
+    "12/14/2019",
+    "SAVING15"
+  );
+  await create("75% off HurryRoll Rollator", "12/14/2019", "HURRY75");
+  await create(
+    "Extra 20% off Hair Care when you spend $50+",
+    "12/14/2019",
+    "GET20"
+  );
 
-// 	const sasha = await animals.create("Sasha", "Dog");
-// 	console.log(sasha);
-// 	await animals.create("Lucy", "Dog");
-// 	let current_animals = await animals.getAll();
-// 	console.log(current_animals);
-// 	const duke = await animals.create("Duke", "Walrus");
-// 	console.log(duke);
+  //   const sasha = await animals.create("Sasha", "Dog");
+  //   console.log(sasha);
+  //   await animals.create("Lucy", "Dog");
+  //   let current_animals = await animals.getAll();
+  //   console.log(current_animals);
+  //   const duke = await animals.create("Duke", "Walrus");
+  //   console.log(duke);
 
-// 	current_animals = await animals.getAll();
-// 	let sasha_id;
-// 	let lucy_id;
-// 	current_animals.forEach(element => {
-// 		if (element.name === "Sasha") {
-// 			sasha_id = ObjectId(element._id).toString();
-// 		}
-// 		if (element.name === "Lucy") {
-// 			lucy_id = ObjectId(element._id).toString();
-// 		}
-// 	});
-// 	const updated_sasha = await animals.rename(sasha_id, "Sashita");
-// 	console.log(updated_sasha);
+  //   current_animals = await animals.getAll();
+  //   let sasha_id;
+  //   let lucy_id;
+  //   current_animals.forEach(element => {
+  //     if (element.name === "Sasha") {
+  //       sasha_id = ObjectId(element._id).toString();
+  //     }
+  //     if (element.name === "Lucy") {
+  //       lucy_id = ObjectId(element._id).toString();
+  //     }
+  //   });
+  //   const updated_sasha = await animals.rename(sasha_id, "Sashita");
+  //   console.log(updated_sasha);
 
-// 	const removed_lucy = await animals.remove(lucy_id);
-// 	console.log(removed_lucy);
+  //   const removed_lucy = await animals.remove(lucy_id);
+  //   console.log(removed_lucy);
 
-// 	current_animals = await animals.getAll();
-// 	console.log(current_animals);
+  //   current_animals = await animals.getAll();
+  //   console.log(current_animals);
 
-// 	const db = await connection();
-// 	await db.serverConfig.close();
-// };
+  const db = await connection();
+  await db.serverConfig.close();
+};
 
-// main().catch(error => {
-// 	console.log(error);
-// });
+main().catch(error => {
+  console.log(error);
+});

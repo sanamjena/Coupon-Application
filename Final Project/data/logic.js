@@ -29,7 +29,7 @@ async function create(
   state,
   password
 ) {
-  if (!firstname) throw "You must provide a name for your animal";
+  if (!firstname) throw "You must provide a name.";
   if (
     Number.isInteger(firstname) ||
     Number.isInteger(lastname) ||
@@ -65,9 +65,10 @@ async function create(
     lastname: lastname,
     emailId: emailId,
     gender: gender,
-    city: city
+    city: city,
+    password: hashedPass
   };
-  hashedPass;
+
   const insertInfo = await userCollection.insertOne(newUser);
   if (insertInfo.insertedCount === 0) throw "Could not add User";
 
