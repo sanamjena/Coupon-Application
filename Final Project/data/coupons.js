@@ -12,9 +12,11 @@ async function get(id) {
   return target_coupon;
 }
 
-async function create(product) {
+async function create(product, code) {
   if (!product) throw "No product was given.";
   if (typeof product !== "string") throw `${product} is not a string.`;
+  if (!code) throw "No code was given.";
+  if (typeof code !== "string") throw `${code} is not a string.`;
   const couponCollection = await coupons();
   //likes: an array of user ID's that have liked the coupon
   //dislikes: an array of user ID's that have disliked the coupon
@@ -25,7 +27,8 @@ async function create(product) {
     likes: [],
     dislikes: [],
     rating: 0,
-    comments: []
+    comments: [],
+    code: code
   };
   const insertInfo = await couponCollection.insertOne(newCoupon);
   if (insertInfo.insertedCount === 0)
