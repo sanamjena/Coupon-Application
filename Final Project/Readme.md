@@ -1,4 +1,4 @@
-Welcome to Coupon Application👋
+Welcome to Coupon Application
 
 Coupon Application is an application capable of generating the best and up to date coupons from various websites in order to gain a hassle free and save money.
 
