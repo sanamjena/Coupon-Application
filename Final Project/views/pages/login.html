@@ -116,8 +116,8 @@
                 <div class="col-lg-8">
                     <div class="breadcrumb_iner">
                         <div class="breadcrumb_iner_item">
-                            <h2>Tracking Order</h2>
-                            <p>Home <span>-</span> Tracking Order</p>
+                            <h2>Login / Sign Up</h2>
+                            <p>Home <span>-</span> Login / Sign Up</p>
                         </div>
                     </div>
                 </div>
@@ -134,10 +134,52 @@
                     <div class="login_part_text text-center">
                         <div class="login_part_text_iner">
                             <h2>New to our Application?</h2>
-                            <p>There are advances being made in science and technology
-                                everyday, and a good example of this is the</p>
-                            <a href="#" class="btn_3">Create an Account</a>
+                            <p>Don't worry we have got something for everyone</p>
+                            
+                            <button class="btn_3" onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
                         </div>
+                        <!-- Button to open the modal -->
+
+
+<!-- The Modal (contains the Sign Up form) -->
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal"></span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <p style="color:black">Please fill in this form to create an account.</pstyle="color:red">
+      <hr>
+      <div>
+        <label for ="first_name"> <b>First Name</b></label>
+      <input type="text" placeholder="Enter first name" name="first_name" required>
+
+      <label for ="last_name"> <b>Last Name</b></label>
+      <input type="text" placeholder="Enter first name" name="last_name" required>
+      </div>
+      
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+
+      <!--<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p> -->
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="cancelbtn1">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
@@ -173,67 +215,7 @@
     </section>
     <!--================login_part end =================-->
 
-    <!--::footer_part start::-->
-    <footer class="footer_part">
-        <div class="container">
-            <div class="row justify-content-around">
 
-                <div class="col-sm-6 col-lg-2">
-                    <div class="single_footer_part">
-                        <h4>Resources</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="">Guides</a></li>
-                            <li><a href="">Research</a></li>
-                            <li><a href="">Experts</a></li>
-                            <li><a href="">Agencies</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="single_footer_part">
-                        
-                        <div id="mc_embed_signup">
-                            <form target="_blank"
-                                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                                method="get" class="subscribe_form relative mail_part">
-                                <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address"
-                                    class="placeholder hide-on-focus" onfocus="this.placeholder = ''"
-                                    onblur="this.placeholder = ' Email Address '">
-                                <button type="submit" name="submit" id="newsletter-submit"
-                                    class="email_icon newsletter-submit button-contactForm">subscribe</button>
-                                <div class="mt-10 info"></div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="copyright_part">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="copyright_text">
-                            <P><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></P>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="footer_icon social_icon">
-                            <ul class="list-unstyled">
-                                <li><a href="#" class="single_social_icon"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#" class="single_social_icon"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#" class="single_social_icon"><i class="fas fa-globe"></i></a></li>
-                                <li><a href="#" class="single_social_icon"><i class="fab fa-behance"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!--::footer_part end::-->
 
     <!-- jquery plugins here-->
     <!-- jquery -->
