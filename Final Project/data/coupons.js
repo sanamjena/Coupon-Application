@@ -142,34 +142,6 @@ const main = async () => {
     "GET20"
   );
 
-  //   const sasha = await animals.create("Sasha", "Dog");
-  //   console.log(sasha);
-  //   await animals.create("Lucy", "Dog");
-  //   let current_animals = await animals.getAll();
-  //   console.log(current_animals);
-  //   const duke = await animals.create("Duke", "Walrus");
-  //   console.log(duke);
-
-  //   current_animals = await animals.getAll();
-  //   let sasha_id;
-  //   let lucy_id;
-  //   current_animals.forEach(element => {
-  //     if (element.name === "Sasha") {
-  //       sasha_id = ObjectId(element._id).toString();
-  //     }
-  //     if (element.name === "Lucy") {
-  //       lucy_id = ObjectId(element._id).toString();
-  //     }
-  //   });
-  //   const updated_sasha = await animals.rename(sasha_id, "Sashita");
-  //   console.log(updated_sasha);
-
-  //   const removed_lucy = await animals.remove(lucy_id);
-  //   console.log(removed_lucy);
-
-  //   current_animals = await animals.getAll();
-  //   console.log(current_animals);
-
   const db = await connection();
   await db.serverConfig.close();
 };
