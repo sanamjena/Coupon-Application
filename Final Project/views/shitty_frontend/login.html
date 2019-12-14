@@ -34,9 +34,7 @@
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="menu_icon"><i class="fas fa-bars"></i></span>
                         </button>
 
@@ -46,8 +44,7 @@
                                     <a class="nav-link" href="index.html">Home</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Shop
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
@@ -57,8 +54,7 @@
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_3"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         pages
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
@@ -80,8 +76,7 @@
                             <a id="search_1" href="javascript:void(0)"><i class="ti-search"></i></a>
                             <a href=""><i class="ti-heart"></i></a>
                             <div class="dropdown cart">
-                                <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-cart-plus"></i>
                                 </a>
                                 <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -135,79 +130,76 @@
                         <div class="login_part_text_iner">
                             <h2>New to our Application?</h2>
                             <p>Don't worry we have got something for everyone</p>
-                            
+
                             <button class="btn_3" onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
                         </div>
                         <!-- Button to open the modal -->
 
 
-<!-- The Modal (contains the Sign Up form) -->
-<div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal"></span>
-  <form class="modal-content" method="post" action="/login">
-    <div class="container">
-      <h1>Sign Up</h1>
-      <p style="color:black">Please fill in this form to create an account.</pstyle="color:red">
-      <hr>
-      <div>
-        <label for ="first_name"> <b>First Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
-      <input type="text" placeholder="Enter first name" name="first_name" required>
-      </div>
-      <div>
-      <label for ="last_name"> <b>Last Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
-      <input type="text" placeholder="Enter first name" name="last_name" required>
-      </div>
-      
-      <div>
-        <label for ="gender"> <b>Gender&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
-        <input type="text" placeholder="Gender" name="gender" required>
-        </div>
+                        <!-- The Modal (contains the Sign Up form) -->
+                        <div id="id01" class="modal">
+                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal"></span>
+                            <form class="modal-content" method="post" action="/login">
+                                <div class="container">
+                                    <h1>Sign Up</h1>
+                                    <p style="color:black">Please fill in this form to create an account.</pstyle="color:red">
+                                        <hr>
+                                        <div>
+                                            <label for="first_name"> <b>First Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+                                            <input type="text" placeholder="Enter first name" name="first_name" required>
+                                        </div>
+                                        <div>
+                                            <label for="last_name"> <b>Last Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+                                            <input type="text" placeholder="Enter first name" name="last_name" required>
+                                        </div>
 
-      <div>
-        <label for="email"><b>Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
-      </div>
-      
-      <div>
-        <label for="psw"><b>Password &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-      </div>
+                                        <div>
+                                            <label for="gender"> <b>Gender&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+                                            <input type="text" placeholder="Gender" name="gender" required>
+                                        </div>
 
-      <div>
-        <label for="psw-repeat"><b>Repeat Password</b></label>
-        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-      </div>
+                                        <div>
+                                            <label for="email"><b>Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+                                            <input type="text" placeholder="Enter Email" name="email" required>
+                                        </div>
+
+                                        <div>
+                                            <label for="psw"><b>Password &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+                                            <input type="password" placeholder="Enter Password" name="psw" required>
+                                        </div>
+
+                                        <div>
+                                            <label for="psw-repeat"><b>Repeat Password</b></label>
+                                            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                                        </div>
 
 
 
-      <label>
+                                        <label>
         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
       </label>
 
-      <!--<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p> -->
+                                        <!--<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p> -->
 
-      <div class="clearfix">
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" class="cancelbtn1">Sign Up</button>
-      </div>
-    </div>
-  </form>
-</div>
+                                        <div class="clearfix">
+                                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                                            <button type="submit" class="cancelbtn1">Sign Up</button>
+                                        </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="login_part_form">
                         <div class="login_part_form_iner">
-                            <h3>Welcome Back ! <br>
-                                Please Sign in now</h3>
+                            <h3>Welcome Back ! <br> Please Sign in now</h3>
                             <form class="row contact_form" action="#" method="post" novalidate="novalidate">
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="text" class="form-control" id="name" name="name" value=""
-                                        placeholder="Username">
+                                    <input type="text" class="form-control" id="name" name="name" value="" placeholder="Username">
                                 </div>
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="password" class="form-control" id="password" name="password" value=""
-                                        placeholder="Password">
+                                    <input type="password" class="form-control" id="password" name="password" value="" placeholder="Password">
                                 </div>
                                 <div class="col-md-12 form-group">
                                     <div class="creat_account d-flex align-items-center">
