@@ -7412,22 +7412,24 @@ h6 {
 
 /* line 1, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_breadcrumb.scss */
 .breadcrumb_bg {
-  background-image: url("../img/breadcrumb.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+ /* background-image: url("../img/breadcrumb.png");
+  background-position: center;*/
+  background-color: #ECFDFF;
+  /*background-repeat: no-repeat;
+  background-size: cover; */
 }
 
 /* line 5, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_breadcrumb.scss */
 .breadcrumb {
   position: relative;
   z-index: 1;
+  background-color: #ECFDFF;
   text-align: left;
 }
 
 /* line 10, ../../01 cl html template/03_jun 2019/188_Aranoz shop_html/sass/_breadcrumb.scss */
 .breadcrumb .breadcrumb_iner {
-  height: 475px;
+  height: 300px;
   width: 100%;
   display: table;
 }
