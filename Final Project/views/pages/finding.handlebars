@@ -1,0 +1,13 @@
+<div>
+    The name is : {{name}}
+</div>
+<ul>
+    {{#each json}}
+    <li><a href="/details/{{this.id}}">
+            {{this.firstName}} {{this.lastName}}</a></li>
+    {{/each}}
+
+
+</ul>
+
+</main>
