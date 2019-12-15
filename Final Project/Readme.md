@@ -5,7 +5,6 @@ Coupon Application is an application capable of generating the best and up to da
 Here's a quick intro as to how it works:
 
 1. npm install
-2. npm run seed
-3. npm start
+2. npm start
 
 That's it, it's as simple as that! visit https://localhost:3000 and the application is up and running!
