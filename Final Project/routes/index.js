@@ -3,6 +3,13 @@ const express = require("express");
 const router = express.Router();
 const loginRoute = require("./login");
 const logoutRoute = require("./logout");
+const home = require("./home");
+const contactform = require("./contactform");
+const walgreens = require("./walgreens");
+const contact = require("./contact");
+const testing = require("./testing");
+const category = require("./category");
+const macys = require("./macys");
 
 const constructorMethod = app => {
   app.use(
@@ -25,9 +32,17 @@ const constructorMethod = app => {
   });
 
   //app.use("/private", privateRoute);
+  app.use("/", testing);
   app.use("/login", loginRoute);
   app.use("/logout", logoutRoute);
-  app.use("/", loginRoute);
+  app.use("/contactus", contactform);
+  app.use("/walgreens", walgreens);
+  app.use("/contact", contact);
+  app.use("/category", category);
+  app.use("/macys", macys);
+
+  // app.use("/contact", contact);
+
   app.use("*", (req, res) => {
     res.status(404).json({ error: "NO SUCH PAGES FOUND" });
   });

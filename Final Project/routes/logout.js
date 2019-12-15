@@ -5,7 +5,7 @@ const session = require("express-session");
 router.get("/", async (req, res) => {
   req.session.destroy(err => {
     req.user = undefined;
-    res.render("pages/login");
+    res.render("user/login");
   });
 });
 

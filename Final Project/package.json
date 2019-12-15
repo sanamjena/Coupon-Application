@@ -1,24 +1,25 @@
 {
-  "name": "final-project",
-  "version": "1.0.0",
-  "description": "CS 546 Final Project Coupon Application in collaboration with Shikha Soneji, Anirudh Das, Jonathon Ho, & Aniket Chavan",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sanamsritam/Coupon-Application/tree/master/Final%20Project"
-  },
-  "author": "Sanam Jena, Shikha Soneji, Anirudh Das, Jonathon Ho & Aniket Chavan",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^3.1.0",
-    "express-session": "^1.17.0",
-    "handlebars": "^4.5.3",
-    "mongodb": "^3.3.5"
-  }
+    "name": "final-project",
+    "version": "1.0.0",
+    "description": "CS 546 Final Project Coupon Application in collaboration with Shikha Soneji, Anirudh Das, Jonathon Ho, & Aniket Chavan",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sanamsritam/Coupon-Application/tree/master/Final%20Project"
+    },
+    "author": "Sanam Jena, Shikha Soneji, Anirudh Das, Jonathon Ho & Aniket Chavan",
+    "license": "ISC",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.19.0",
+        "express": "^4.17.1",
+        "express-handlebars": "^3.1.0",
+        "express-session": "^1.17.0",
+        "handlebars": "^4.5.3",
+        "mongodb": "^3.3.5"
+    }
 }

@@ -8,4 +8,4 @@ Here's a quick intro as to how it works:
 2. npm run seed
 3. npm start
 
-Thats it! visit https://localhost:3000 and the application is up and running!
+That's it, it's as simple as that! visit https://localhost:3000 and the application is up and running!
