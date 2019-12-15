@@ -20,6 +20,13 @@ async function get(Id) {
   return usr;
 }
 
+async function getall() {
+  const userCollection = await users();
+  const animal = await userCollection.find({}).toArray();
+
+  return animal;
+}
+
 async function create(
   firstname,
   lastname,
@@ -53,8 +60,7 @@ async function create(
   if (!validateEmail(emailId)) throw "Please Enter a valid Email I";
   const userCollection = await users();
 
-  let hashedPass;
-  bcryptjs.genSalt(15, salt => {
+  let hashedPass = bcryptjs.genSalt(15, salt => {
     bcryptjs.hash(password, salt, hash => {
       hashedPass = hash;
     });
@@ -79,6 +85,7 @@ async function create(
 }
 
 async function authenticate(emailId, password) {
+  let count = 0;
   for (var res = 0; res < info.length; res++) {
     if (get[Id].username == username) {
       mongoCollections.findOne(emailId);
@@ -101,5 +108,25 @@ module.exports = {
   validateEmail,
   get,
   create,
-  authenticate
+  authenticate,
+  getall
 };
+
+async function main() {
+  try {
+    var ct = await create(
+      "sanam",
+      "Jena",
+      "sanamsritam@gmail.com",
+      "male",
+      "Hoboken",
+      "new Jersey",
+      "IdontKnow"
+    );
+    console.log(ct);
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+main();
